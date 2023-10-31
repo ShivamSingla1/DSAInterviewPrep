@@ -12,7 +12,8 @@
 class Solution {
 public:
     bool symmetric(TreeNode* left, TreeNode* right){
-        if(left == NULL || right == NULL) return left == right;
+        if(left == NULL && right == NULL) return 1;
+        if(left == NULL || right == NULL) return 0;
         if(left->val != right->val) return false;
 
         return symmetric(left->left, right->right) && symmetric(left->right, right->left);
